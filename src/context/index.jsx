@@ -49,7 +49,6 @@ export const StateContextProvider = ({ children }) => {
       imageUrl: product.imageUrl,
       pId: i,
     }));
-    
 
     return parsedproduct;
   };
@@ -85,44 +84,35 @@ export const StateContextProvider = ({ children }) => {
   };
 
   const getAdress = async () => {
-    
     const home_address = await contractWrite.myAddress();
     return home_address;
-     
   };
 
   const getTransactions = async () => {
-    const data =  await contractWrite.myTransactions();
+    const data = await contractWrite.myTransactions();
     const parsedproduct = data.map((product, i) => ({
-      amount : ethers.utils.formatEther(product.price),
-      date : product.time.toNumber(),
-      positive : product.pos.toNumber()
+      amount: ethers.utils.formatEther(product.price),
+      date: product.time.toNumber(),
+      positive: product.pos.toNumber(),
     }));
-    
+
     console.log(parsedproduct);
     return parsedproduct;
-     
   };
 
   const buyProduct = async (pid) => {
-    try{
+    try {
       await contractWrite.purchase(pid);
-    }
-    catch(error){
+    } catch (error) {
       alert("You may not have enough balance or product maybe sold");
     }
-    
   };
 
   const ListProduct = async (item) => {
-    const _price =  ethers.utils.parseEther(item.price);
-    const tx =  await contractWrite.addProduct(
-      item.name,
-     _price,
-      item.url
-    );
+    const _price = ethers.utils.parseEther(item.price);
+    const tx = await contractWrite.addProduct(item.name, _price, item.url);
 
-    await tx.wait()
+    await tx.wait();
   };
 
   const balance = async () => {

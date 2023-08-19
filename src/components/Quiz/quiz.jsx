@@ -214,7 +214,7 @@ const QuizComponent = () => {
             <p className="start-text">
               Click the button below to start the quiz.
             </p>
-            <button className="start-button" onClick={handleStartQuiz}>
+            <button className=" bg-blue-500 m-3 p-3 rounded-xl" onClick={handleStartQuiz}>
               Start Quiz
             </button>
           </div>
@@ -263,8 +263,8 @@ const QuizComponent = () => {
               </div>
             ) : (
               <>
-                <button className="bg-slate-500" onClick={seth}>
-                  Retry
+                <button className="bg-blue-500 m-3 p-3 rounded-sm w-32" onClick={seth}>
+                  <b>Retry</b>
                 </button>
               </>
             )}

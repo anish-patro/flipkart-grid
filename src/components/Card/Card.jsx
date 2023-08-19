@@ -25,7 +25,6 @@ const Card = ({ imageUrl, name, price, sold, pId }) => {
         </h4>
 
         <div className="product-bottom-details">
-          {/* <div className="product-price"> */}
           <span
             className="product-price"
             onClick={() => {

@@ -75,7 +75,7 @@ const Profile = () => {
                   )}
 
                   {items.positive === 1 ? (
-                    <td> You have Earned FLP</td>
+                    <td> Earned through quiz</td>
                   ) : (
                     <td>You Purchased in our FlipSite</td>
                   )}
