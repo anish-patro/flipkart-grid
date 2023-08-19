@@ -1,0 +1,54 @@
+.each-row {
+  border: black;
+  border: 1px;
+}
+
+.loyalty-table {
+  /* overflow: hidden; */
+  /* max-width: 100vw; */
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.loyalty-table th,
+.loyalty-table td {
+  
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.loyalty-table th {
+  background-color: #f2f2f2;
+}
+
+.loyalty-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.table-container {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-color: black;
+}
+.Home {
+  margin-bottom: 10px;
+  width: 40px;
+  background-color: #b4b5b8;
+  padding: 4px 8px;
+  border-radius: 2px;
+  color: slategrey;
+}
+.edit {
+  background-color: blue;
+  margin: 3px;
+  padding: 1px 10px;
+  border-radius: 5px;
+}
