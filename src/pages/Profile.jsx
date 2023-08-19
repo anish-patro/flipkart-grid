@@ -44,7 +44,7 @@ const Profile = () => {
       {isLoading && <Loader />}
       <div className="purchased-products">
         <div className="text-3xl ml-3 mt-10 text-gray-500">
-          Purchased products
+          Purchased Products
         </div>
 
         {myProducts?.map((item) => {
@@ -53,7 +53,7 @@ const Profile = () => {
       </div>
       <div className="transaction">
         <div className="text-3xl ml-3 mt-10 text-gray-500">
-          My Transactions...
+          My Transactions
         </div>
         <table className="loyalty-table">
           <thead>

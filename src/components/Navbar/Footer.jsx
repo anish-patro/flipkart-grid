@@ -54,14 +54,8 @@ const footer = () => {
           <div>
             <div>Github:</div>
             <div className="text-slate-300 flex flex-col">
-              <Link to="https://flipkart-grid-six.vercel.app/">
+              <Link to="https://github.com/anish-patro/flipkart-grid">
                 <b>Website</b>
-              </Link>
-              <Link to="https://github.com/sandip149">
-                <b>Sandip</b>
-              </Link>
-              <Link to="https://github.com/shxv-69">
-                <b>Shivranjan</b>
               </Link>
             </div>
           </div>

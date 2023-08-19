@@ -212,9 +212,12 @@ const QuizComponent = () => {
           <div>
             <h2 className="question">Welcome to the Flipkart Quiz!</h2>
             <p className="start-text">
-              Click the button below to start the quiz.
+              Click the button below to start the quiz ↓
             </p>
-            <button className=" bg-blue-500 m-3 p-3 rounded-xl" onClick={handleStartQuiz}>
+            <button
+              className=" bg-blue-500 m-3 p-3 rounded-xl"
+              onClick={handleStartQuiz}
+            >
               Start Quiz
             </button>
           </div>
@@ -237,14 +240,26 @@ const QuizComponent = () => {
           <div>
             <h2 className="question text-3xl font-serif">Results</h2>
             <p className="score text-xl">Your score: {score}/3</p>
-            <div className="flex justify-center">
-              <img
-                src="../../../congrats.svg"
-                alt="Congratulations !!!"
-                width={500}
-                height={500}
-              />
-            </div>
+            {score === 3 ? (
+              <div className="flex justify-center">
+                <img
+                  src="../../../congrats.svg"
+                  alt="Congratulations !!!"
+                  width={500}
+                  height={500}
+                />
+              </div>
+            ) : (
+              <div className="flex justify-center">
+                <img
+                  className="drop-shadow-4xl  rounded-md"
+                  src="./sorry.png"
+                  alt="Congratulations !!!"
+                  width={500}
+                  height={500}
+                />
+              </div>
+            )}
             {score === 3 ? (
               <div>
                 {send && (
@@ -263,8 +278,11 @@ const QuizComponent = () => {
               </div>
             ) : (
               <>
-                <button className="bg-blue-500 m-3 p-3 rounded-sm w-32" onClick={seth}>
-                  <b>Retry</b>
+                <button
+                  className="bg-blue-500 m-3 p-3 rounded-md w-32 font-semibold"
+                  onClick={seth}
+                >
+                  Retry
                 </button>
               </>
             )}
