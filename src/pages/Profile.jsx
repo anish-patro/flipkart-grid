@@ -25,7 +25,7 @@ const Profile = () => {
   const handleAddress = async () => {
     const home_address = await getAdress();
     setHome(home_address);
-    console.log(home);
+    // console.log(home);
   };
 
   const handleTransaction = async () => {
@@ -64,8 +64,10 @@ const Profile = () => {
             </tr>
           </thead>
           <tbody>
-            {/* <tr className="each-row"> */}
             {transactions?.map((items) => {
+              const now = new Date();
+              dateFormat(now, "dddd, mmmm dS, yyyy, h:MM:ss TT");
+              console.log(now);
               return (
                 <tr className="each-row" key={items.date}>
                   {items.positive === 1 ? (
@@ -79,6 +81,7 @@ const Profile = () => {
                   ) : (
                     <td>You Purchased in our FlipSite</td>
                   )}
+
                   <td>
                     {dateFormat(items.date, "dddd, mmmm dS, yyyy, h:MM:ss TT")}
                   </td>

@@ -52,7 +52,7 @@ const Navbar = () => {
               navigate("/profile");
             }}
           >
-            <FaUserCircle className="cursor-pointer" size={30}/>
+            <FaUserCircle className="cursor-pointer" size={30} />
           </div>
         ) : (
           <Link

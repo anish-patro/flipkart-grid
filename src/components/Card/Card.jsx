@@ -34,7 +34,6 @@ const Card = ({ imageUrl, name, price, sold, pId }) => {
             FLP<b>{price}</b>
           </span>
 
-          {/* </div> */}
           <div className="product-links">
             <a href="/">
               <i className="fa fa-heart"></i>

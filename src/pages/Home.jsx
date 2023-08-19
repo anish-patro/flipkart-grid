@@ -8,7 +8,7 @@ import Loader from "../components/Loader";
 const Home = () => {
   const [product, setProduct] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const { getProducts, products,connect } = useStateContext();
+  const { getProducts, products, connect } = useStateContext();
 
   const fetchallproduct = async () => {
     setIsLoading(true);
