@@ -34,7 +34,7 @@ To get started with this project, follow these steps:
 
 ### Installation
 
-1. Clone the repository: `git clone https://github.com/yourusername/loyalty-rewards.git`
+1. Clone the repository: `git clone https://github.com/anish-patro/flipkart-grid.git`
 2. Install dependencies: `npm install`
 
 ### Usage
