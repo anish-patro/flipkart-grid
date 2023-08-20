@@ -14,7 +14,7 @@ const Home = () => {
     setIsLoading(true);
     const data = await getProducts();
     setProduct(data);
-    console.log(data);
+    // console.log(data);
     setIsLoading(false);
   };
 

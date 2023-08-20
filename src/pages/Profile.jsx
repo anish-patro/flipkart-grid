@@ -64,10 +64,11 @@ const Profile = () => {
         <div className="text-3xl ml-3 mt-10 text-gray-500">
           Purchased Products
         </div>
-
-        {myProducts?.map((item) => {
-          return <Card key={item.pId} {...item} />;
-        })}
+        <div className="grid grid-cols-3">
+          {myProducts?.map((item) => {
+            return <Card key={item.pId} {...item} />;
+          })}
+        </div>
       </div>
       <div className="transaction">
         <div className="text-3xl ml-3 mt-10 text-gray-500">My Transactions</div>
