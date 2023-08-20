@@ -6,14 +6,8 @@ import "./Profile.css";
 
 import { useNavigate } from "react-router-dom";
 import dateFormat from "dateformat";
-import moment from "moment/moment";
-const Profile = () => {
-  const dateFormatter = (df) => {
-    var t = new Date(df * 1000);
-    var formatted = moment(t).format("dd.mm.yyyy hh:MM:ss");
-    return formatted;
-  };
 
+const Profile = () => {
   const { getTransactions, getAdress, getmyProducts, balance, signer } =
     useStateContext();
   const [home, setHome] = useState([]);
@@ -43,6 +37,7 @@ const Profile = () => {
 
   const handleTransaction = async () => {
     const transactiondata = await getTransactions();
+    transactiondata.reverse();
     setTransactions(transactiondata);
   };
 
