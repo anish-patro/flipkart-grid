@@ -68,7 +68,7 @@ export const StateContextProvider = ({ children }) => {
 
   const custom = async () => {
     try {
-      const amountString = "50";
+      const amountString = "0.05";
       const ethe = ethers.utils.parseEther(amountString);
 
       const tx = await contractWrite.CustomTransfer(ethe);
