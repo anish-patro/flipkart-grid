@@ -23,7 +23,6 @@ export const StateContextProvider = ({ children }) => {
     await provider.send("eth_requestAccounts", []);
 
     const Address = await signer.getAddress();
-    setAddress(Address);
   }
 
   const contractRead = new ethers.Contract(
@@ -63,7 +62,7 @@ export const StateContextProvider = ({ children }) => {
   };
   const getInitialSupply = async () => {
     const k = await contractWrite.totalSupply();
-    console.log(ethers.utils.formatEther(k));
+    // console.log(ethers.utils.formatEther(k));
   };
 
   const custom = async () => {
@@ -115,8 +114,9 @@ export const StateContextProvider = ({ children }) => {
     await tx.wait();
   };
 
-  const balance = async () => {
-    return await contractRead.balanceOf(address);
+  const balance = async (param) => {
+    const data = await contractWrite.balanceOf(param);
+    return ethers.utils.formatEther(data);
   };
 
   return (
@@ -136,6 +136,7 @@ export const StateContextProvider = ({ children }) => {
         ListProduct,
         balance,
         getmyProducts,
+        signer,
       }}
     >
       {children}

@@ -6,13 +6,21 @@ import "./Profile.css";
 
 import { useNavigate } from "react-router-dom";
 import dateFormat from "dateformat";
+import moment from "moment/moment";
 const Profile = () => {
-  const { getTransactions, getAdress, getmyProducts } = useStateContext();
+  const dateFormatter = (df) => {
+    var t = new Date(df * 1000);
+    var formatted = moment(t).format("dd.mm.yyyy hh:MM:ss");
+    return formatted;
+  };
+
+  const { getTransactions, getAdress, getmyProducts, balance, signer } =
+    useStateContext();
   const [home, setHome] = useState([]);
   const [transactions, setTransactions] = useState([]);
   const [myProducts, setMyProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-
+  const [bal, setBal] = useState(0);
   const handleInfo = async () => {
     setIsLoading(true);
 
@@ -25,7 +33,12 @@ const Profile = () => {
   const handleAddress = async () => {
     const home_address = await getAdress();
     setHome(home_address);
-    // console.log(home);
+  };
+
+  const totalbalance = async () => {
+    const address = await signer.getAddress();
+    const myBalance = await balance(address);
+    setBal(myBalance);
   };
 
   const handleTransaction = async () => {
@@ -38,11 +51,16 @@ const Profile = () => {
     handleInfo();
     handleAddress();
     handleTransaction();
+    totalbalance();
   }, []);
   return (
     <div>
       {isLoading && <Loader />}
+
       <div className="purchased-products">
+        <div className="text-2xl ml-3 mt-10 text-gray-500">
+          Total FLP: {bal}
+        </div>
         <div className="text-3xl ml-3 mt-10 text-gray-500">
           Purchased Products
         </div>
@@ -52,9 +70,7 @@ const Profile = () => {
         })}
       </div>
       <div className="transaction">
-        <div className="text-3xl ml-3 mt-10 text-gray-500">
-          My Transactions
-        </div>
+        <div className="text-3xl ml-3 mt-10 text-gray-500">My Transactions</div>
         <table className="loyalty-table">
           <thead>
             <tr>
@@ -83,7 +99,10 @@ const Profile = () => {
                   )}
 
                   <td>
-                    {dateFormat(items.date, "dddd, mmmm dS, yyyy, h:MM:ss TT")}
+                    {dateFormat(
+                      items.date * 1000,
+                      "dddd, mmmm dS, yyyy, h:MM:ss TT"
+                    )}
                   </td>
                 </tr>
               );

@@ -9,7 +9,7 @@ const footer = () => {
           <div>
             <div>ABOUT</div>
             <div className="text-slate-300">
-              <div className="text-xl text-yellow-400">Team Name</div>
+              <div className="text-xl text-yellow-100">Team Name :</div>
               <div className="text-xl text-yellow-400">Proud_Mistris</div>
             </div>
           </div>
@@ -32,8 +32,10 @@ const footer = () => {
           <div>
             <div>Address</div>
             <div className="text-slate-300 text-xl">
-              <div>National Institute of Technology, Rourkela</div>
-              <div>Sector-1</div>
+              <div className="font-semibold">
+                National Institute of Technology, Rourkela
+              </div>
+              <div className="font-semibold">Sector-1</div>
             </div>
           </div>
 
@@ -52,10 +54,10 @@ const footer = () => {
             </div>
           </div>
           <div>
-            <div>Github:</div>
+            <div>Code:</div>
             <div className="text-slate-300 flex flex-col">
               <Link to="https://github.com/anish-patro/flipkart-grid">
-                <b>Website</b>
+                <b>Github</b>
               </Link>
             </div>
           </div>
