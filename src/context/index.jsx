@@ -23,6 +23,7 @@ export const StateContextProvider = ({ children }) => {
     await provider.send("eth_requestAccounts", []);
 
     const Address = await signer.getAddress();
+    setAddress(Address);
   }
 
   const contractRead = new ethers.Contract(
