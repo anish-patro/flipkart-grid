@@ -2,7 +2,7 @@
 
 Welcome to the Blockchain Loyalty & Rewards Program repository! This project leverages blockchain technology to create a robust loyalty and rewards system. Users can earn and redeem tokens seamlessly while enjoying the benefits of a decentralized ecosystem.
 
-Video Link: https://www.youtube.com/watch?v=pDFX2Qqo9bI
+Video Link: https://www.youtube.com/watch?v=pDFX2Qqo9bI <br/>
 Website: https://flipkart-grid-six.vercel.app
 ## Table of Contents
 
