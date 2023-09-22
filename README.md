@@ -11,8 +11,6 @@ Website: https://flipkart-grid-six.vercel.app
 - [Getting Started](#getting-started)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Overview
 
@@ -46,9 +44,6 @@ To get started with this project, follow these steps:
 
 For detailed instructions and documentation, refer to the (https://github.com/anish-patro/flipkart-grid).
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
 
 ---
 
